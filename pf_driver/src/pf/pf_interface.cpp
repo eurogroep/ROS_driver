@@ -265,10 +265,10 @@ void PFInterface::reconfig_callback_r2000(pf_driver::PFDriverR2000Config& config
   {
     config_.skip_scans = config.skip_scans;
   }
-  else if(level == 27)
+  else if (level == 27)
   {
     config_.time_offset = config.time_offset;
-  } 
+  }
   else
   {
     protocol_interface_->handle_reconfig(config, level);
@@ -280,7 +280,8 @@ void PFInterface::reconfig_callback_r2000(pf_driver::PFDriverR2000Config& config
 }
 
 void PFInterface::reconfig_callback_r2300(pf_driver::PFDriverR2300Config& config, uint32_t level)
-{ double time_offset = 0;
+{
+  double time_offset = 0;
   if (product_ != "R2300")
     return;
   if (state_ != PFState::RUNNING)
@@ -321,7 +322,7 @@ void PFInterface::reconfig_callback_r2300(pf_driver::PFDriverR2300Config& config
   {
     config_.skip_scans = config.skip_scans;
   }
-  else if(level == 25)
+  else if (level == 25)
   {
     config_.time_offset = config.time_offset;
   }
